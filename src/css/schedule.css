@@ -1,0 +1,329 @@
+*{
+
+    margin: 0;
+  
+    padding: 0;
+  
+  }
+  
+   
+  
+  body {
+  
+    font-family: "Lato", sans-serif;
+  
+    background-color: #032CBF;
+  
+  }
+  
+  .schedule-sidenav {
+  
+      height: 100%;
+  
+      width: 18vw;
+  
+      position: fixed;
+  
+      z-index: 100;
+  
+      left: 0;
+  
+      transition: 0.6s;
+  
+      top: 0;
+  
+      background-color: #E1E1DD;
+  
+      position: fixed;
+  
+      overflow-x: hidden;
+  
+      padding-top: 60px;
+  
+    }
+  
+    
+  
+    .schedule-sidenav a {
+  
+      padding: 8px 8px 8px 32px;
+  
+      text-decoration: none;
+  
+      font-size: 25px;
+  
+      color: #032CBF;
+  
+      transition: 0.3s;
+  
+      display: block;
+  
+    }
+  
+    
+  
+    
+  
+    .schedule-sidenav a:hover {
+  
+      opacity: 0.9;
+  
+    }
+  
+    .schedule-sidemenudivs:hover{
+    background-color: #EFF059;
+  }
+  
+  
+    .schedule-sidenav .schedule-closebtn {
+  
+      position: absolute;
+  
+      top: 0;
+  
+      right: 25px;
+  
+      font-size: 30px;
+  
+      margin-left: 50px;
+  
+    }
+  
+   
+  
+  div.schedule-container{
+  
+      width: 90vw;
+  
+      height: 100vh;
+  
+  }
+  
+  /*div.schedule-container > div.schedule-highercontainer{
+  
+      display: flex;
+  
+      flex-direction: column;
+  
+      justify-content: center;
+  
+      align-items: center;
+  
+  }*/
+  
+  
+  
+  
+  
+  div.schedule-container > div.schedule-lowercontainer >  * {
+  
+      margin-left: 20vw;
+  
+      margin-top: 1vh;
+  
+  }  
+  
+  select{
+  
+      width: 20vw;
+  
+      font-family: 'Courier New', Courier, monospace;
+  
+      font-size: 21px;
+  
+      padding: 4px;
+  
+  }
+  
+  button{
+  
+      width: 5vw;
+      height: 5.schedule-4vh;
+  
+      font-family: 'Courier New', Courier, monospace;
+  
+      font-size: 21px;
+  
+      padding: 3px;
+  
+      margin-left: 5vw;
+  
+      background-color: #EFF059;
+  
+      color: #032CBF;
+  
+      opacity: 0.9;
+  
+      border: 0px;
+  
+  }
+  
+  
+  
+  button:hover{
+  
+    
+    opacity: 1;
+  
+  }
+  
+  
+  div.schedule-container > div.schedule-lowercontainer{
+  
+      width: 90vw;
+  
+  }
+  
+  table {
+  
+      font-family: Arial, Helvetica, sans-serif;
+  
+      border-collapse: collapse;
+  
+      width: 75vw;
+  
+  
+    }
+  
+    
+  
+     td,  th {
+  
+      border: 1px solid #ddd;
+  
+      padding: 8px;
+  
+    }
+  
+    
+  
+     tr{background-color: #f2f2f2;}
+  
+    
+  
+     tr:hover {background-color: #ddd;}
+  
+    
+  
+     th {
+  
+      padding-top: 12px;
+  
+      padding-bottom: 12px;
+  
+      text-align: left;
+  
+      background-color: #EFF059;
+  
+      color: #032CBF;
+  
+    }
+  
+    @media screen and (max-height: 450px) {
+  
+      .schedule-sidenav {padding-top: 15px;}
+  
+      .schedule-sidenav a {font-size: 18px;}
+  
+    }
+  
+    .schedule-gpa{
+    width: 75vw;
+    height: 5vh;
+    margin-left: 20vw;
+  
+    background-color: #E1E1DD;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+  }
+  
+  .schedule-headinfo{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 25px;
+    color: #032CBF;
+    margin-left: 40%;
+  
+  }
+  
+  .schedule-headicons{
+    display: inline-block;
+    margin-left: 38%;
+  }
+  
+  .schedule-secselect>.schedule-headinfo{
+    
+    margin-left: 39%;
+  
+  }
+  
+  .schedule-selectlist{
+    margin-left: 20vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .schedule-selectlist>select{
+    margin-left: 5vw;
+  }
+  
+  
+  
+  
+  .schedule-selectlist>p{
+    color: #E1E1DD;
+    font-size: 18px;
+    margin-left: 5vw;
+  }
+  
+  
+  
+  
+  
+  .schedule-secselect>.schedule-headicons{
+    
+    margin-left: 37%;
+  }
+  
+  
+  .schedule-headicons i{
+    color: #032CBF;
+  }
+  
+  .schedule-openmenu{
+    color: #E1E1DD;
+  
+  }
+  
+  .schedule-rightparthead{
+    width: 20vw;
+    margin-left: 18vw;
+    transition: 0.6s;
+    font-size: 25px;
+    padding-left: 10px;
+  }
+  
+  .schedule-headimg{
+    background-image: url(../images/umslogo.png);
+    background-size: cover;
+    background-color: #032CBF ;
+    background-position: center;
+    width: 150px;
+  }
+  
+  .schedule-schedulehead{
+    width: 75vw;
+    height: 10vh;
+    height: 10;
+    margin-left: 19vw;
+    background-color: #EFF059;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #032CBF;
+    font-size: 20px;
+    border: 1px solid #E1E1DD;
+  }

@@ -1,0 +1,111 @@
+.login-body{
+	background-color: #032CBF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+}
+
+.login-main{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10vh;
+	width: 50vw;
+	height: 60vh;
+
+	
+}
+.login-theform{
+	position: relative;
+	background-color: #EFF059;
+	width: 30vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	box-shadow: 0px -10px 15px 0px #fff611;
+}
+
+label{
+	color: #032CBF;
+	font-size: 19px;
+	font-weight: bold;
+}
+
+input{
+	background-color: #E1E1DD;
+	color: #032CBF;
+	width: 300px;
+	border: 1px solid #032CBF;
+	height: 25px;
+	font-size: 14px;
+
+}
+
+input:hover{
+	border: 2px solid #032CBF;
+}
+
+.login-logo{
+	background-image: url("../images/umslogo.png");
+	background-position: center;
+	background-size: cover;	
+	width: 200px;
+	height: 100px;
+	background-color: #032CBF;
+	margin-bottom: 20px;
+
+}
+
+.login-submit{
+	float: right;
+	background-color: #032CBF;
+	color: #EFF059;
+	border-style: none;
+	width: 70px;
+	height: 35px;
+	opacity: 0.F8;
+	margin-bottom: 20px;
+	
+	font-size: 17px;
+}
+
+.login-submit:hover{
+	opacity: 1;
+
+}
+
+.login-formheader{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0px;
+	height: 50px;
+	width: 100%;
+	border-radius: 20px;
+	border: 1px solid #032CBF;
+	
+	background-color: #E1E1DD;
+
+}
+
+.login-formheader>p{
+	color: #032CBF;
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+
+.login-test>p{
+	color: #032CBF;
+
+}
+
+.login-test{
+	
+	margin-top: 50px;
+}

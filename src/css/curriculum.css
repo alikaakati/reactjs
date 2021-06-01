@@ -1,0 +1,300 @@
+*{
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+ 
+
+body {
+
+  font-family: "Lato", sans-serif;
+
+  background-color: #032CBF;
+
+}
+
+.curri-sidenav {
+
+    height: 100%;
+
+    width: 18vw;
+
+    position: fixed;
+
+   z-index: 100;
+
+    left: 0;
+
+    transition: 0.6s;
+
+    top: 0;
+
+    background-color: #E1E1DD;
+
+    position: fixed;
+
+    overflow-x: hidden;
+
+    padding-top: 60px;
+
+  }
+
+  
+
+  .curri-sidenav a {
+
+    padding: 8px 8px 8px 32px;
+
+    text-decoration: none;
+
+    font-size: 25px;
+
+    color: #032CBF;
+
+    transition: 0.3s;
+
+    display: block;
+
+  }
+
+  
+
+  
+
+  .curri-sidenav a:hover {
+
+    opacity: 0.9;
+
+  }
+
+  .curri-sidemenudivs:hover{
+  background-color: #EFF059;
+}
+
+
+  .curri-sidenav .curri-closebtn {
+
+    position: absolute;
+
+    top: 0;
+
+    right: 25px;
+
+    font-size: 30px;
+
+    margin-left: 50px;
+
+  }
+
+ 
+
+div.curri-container{
+
+    width: 90vw;
+
+    height: 100vh;
+
+}
+
+div.curri-container > div.curri-highercontainer{
+
+    height: 7vh;
+    margin-top: 1vh;
+    width: 74.curri-8vw;
+    display: flex;
+    margin-left: 20vw;
+    border: 1px dotted #E1E1DD;
+    border-bottom: none;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+}
+
+div.curri-container > div.curri-highercontainer > h5{
+
+    font-size: 20px;
+    color: #E1E1DD;
+    margin-left: 5px;
+
+}
+
+
+/*div.curri-container > div.curri-highercontainer >  * {
+
+    margin-right: 30vw;
+
+}*/  
+
+/*div.curri-container > div.curri-lowercontainer >  * {
+
+    margin-left: 20vw;
+
+    margin-top: 1vh;
+
+}  */
+
+select{
+
+    width: 20vw;
+
+    font-family: 'Courier New', Courier, monospace;
+
+    font-size: 21px;
+
+    padding: 4px;
+
+}
+
+button{
+
+    margin-top: 10px;
+
+    width: 5vw;
+    height: 5vh;
+
+    font-family: 'Courier New', Courier, monospace;
+
+    font-size: 21px;
+
+    padding: 3px;
+
+    background-color: #EFF059;
+
+    color: #032CBF;
+
+    opacity: 0.9;
+
+    border: 0px;
+
+}
+
+
+button:hover{
+
+  
+  opacity: 1;
+
+}
+
+
+div.curri-container > div.curri-lowercontainer{
+
+    width: 75vw;
+    margin-left: 20vw;
+}
+
+table {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    border-collapse: collapse;
+
+    width: 75vw;
+
+
+  }
+
+  
+
+   td,  th {
+
+    border: 1px solid #ddd;
+
+    padding: 8px;
+
+  }
+
+  
+
+   tr{background-color: #f2f2f2;}
+
+  
+
+   tr:hover {background-color: #ddd;}
+
+  
+
+   th {
+
+    padding-top: 12px;
+
+    padding-bottom: 12px;
+
+    text-align: left;
+
+    background-color: #EFF059;
+
+    color: #032CBF;
+
+  }
+
+  @media screen and (max-height: 450px) {
+
+    .curri-sidenav {padding-top: 15px;}
+
+    .curri-sidenav a {font-size: 18px;}
+
+  }
+
+  .curri-gpa{
+  width: 75vw;
+  height: 5vh;
+  margin-left: 20vw;
+
+  background-color: #E1E1DD;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+}
+
+.curri-headinfo{
+  display: inline-block;
+  font-weight: bold;
+  font-size: 25px;
+  color: #032CBF;
+  margin-left: 35%;
+
+}
+
+.curri-semester td{
+  border: 0;
+}
+
+.curri-headicons{
+  display: inline-block;
+  margin-left: 35%;
+}
+
+h2{
+  color: #E1E1DD;
+}
+
+.curri-headicons i{
+  color: #032CBF;
+}
+
+.curri-openmenu{
+  color: #E1E1DD;
+
+}
+
+.curri-rightparthead{
+  width: 20vw;
+  margin-left: 18vw;
+  transition: 0.6s;
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.curri-headimg{
+  background-image: url("../images/umslogo.png");
+  background-size: cover;
+  background-color: #032CBF ;
+  background-position: center;
+  width: 150px;
+}

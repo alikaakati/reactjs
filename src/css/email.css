@@ -1,0 +1,99 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+.email-main{
+	width: 100vw;
+	height: 100vh;
+	background-color: #E1E1DD;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.email-mainmid{
+	
+	border: 1px solid #2b50c8;
+	width: 80vw;
+	height: 90vh;
+	border-left: none;
+	border-right: none;
+
+
+}
+
+.email-h1{
+	color: #032CBF;
+	font-size: 50px;
+}
+
+.email-p{
+	color: #032CBF;
+	cursor: pointer;
+
+
+}
+
+.email-h3{
+	font-size: 25px;
+	color: #032CBF;
+
+}
+
+.email-button{
+	border: none;
+	width: 150px;
+	height: 60px;
+	background-color: #FFD700; 
+	cursor: pointer;
+	font-size: 20px;
+	color: #032CBF;
+}
+
+.email-button:hover{
+	
+	opacity: 0.9;
+}
+
+
+.email-form{
+
+	width: 80%;
+	height: 80%;
+	margin-top: 2%;
+	margin-left: 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+
+}
+
+.email-formupper{
+	display: flex;
+	justify-content: space-between;
+	height: 50%;
+	align-items: center;
+}
+
+.email-inside{
+	display: flex;
+	flex-direction: row;
+}
+
+.email-formlower{
+	display: flex;
+	justify-content: space-between;
+	height: 50%;
+	align-items: center;
+}
+
+.email-i{
+	color: #FFD700;
+	font-size: 50px;
+}
+
+.email-phone1{
+	margin-left: 10px;
+}

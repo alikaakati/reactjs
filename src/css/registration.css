@@ -1,0 +1,282 @@
+*{
+
+    margin: 0;
+  
+    padding: 0;
+  
+  }
+  
+   
+  
+  .registration-body {
+  
+    font-family: "Lato", sans-serif;
+  
+    background-color: #032CBF;
+  
+  }
+  
+  .registration-sidenav {
+  
+      height: 100%;
+  
+      width: 18vw;
+  
+      position: fixed;
+  
+      z-index: 100;
+  
+      left: 0;
+  
+      transition: 0.6s;
+  
+      top: 0;
+  
+      background-color: #E1E1DD;
+  
+      position: fixed;
+  
+      overflow-x: hidden;
+  
+      padding-top: 60px;
+  
+    }
+  
+    
+  
+    .registration-sidenav a {
+  
+      padding: 8px 8px 8px 32px;
+  
+      text-decoration: none;
+  
+      font-size: 25px;
+  
+      color: #032CBF;
+  
+      transition: 0.3s;
+  
+      display: block;
+  
+    }
+  
+    
+  
+    
+  
+    .registration-sidenav a:hover {
+  
+      opacity: 0.9;
+  
+    }
+  
+    .registration-sidemenudivs:hover{
+    background-color: #EFF059;
+  }
+  
+  
+    .registration-sidenav .registration-closebtn {
+  
+      position: absolute;
+  
+      top: 0;
+  
+      right: 25px;
+  
+      font-size: 30px;
+  
+      margin-left: 50px;
+  
+    }
+  
+   
+  
+  div.registration-container{
+  
+      width: 100vw;
+  
+      height: 100vh;
+  
+  }
+  
+  div.registration-container > div.registration-highercontainer{
+  
+      height: 15vh;
+      width: 100vw;
+  
+      display: flex;
+  
+      justify-content: flex-end;
+  
+      align-items: center;
+  
+  }
+  
+  
+  div.registration-container > div.registration-highercontainer >  * {
+  
+      margin-right: 30vw;
+  
+  }  
+  
+  div.registration-container > div.registration-lowercontainer >  * {
+  
+      margin-left: 20vw;
+  
+      margin-top: 1vh;
+  
+  }  
+  
+  select{
+  
+      width: 20vw;
+  
+      font-family: 'Courier New', Courier, monospace;
+  
+      font-size: 21px;
+  
+      padding: 4px;
+  
+  }
+  
+  button{
+  
+      margin-top: 10px;
+  
+      width: 5vw;
+      height: 5vh;
+  
+      font-family: 'Courier New', Courier, monospace;
+  
+      font-size: 21px;
+  
+      padding: 3px;
+  
+      background-color: #EFF059;
+  
+      color: #032CBF;
+  
+      opacity: 0.9;
+  
+      border: 0px;
+  
+  }
+  
+  
+  button:hover{
+  
+    
+    opacity: 1;
+  
+  }
+  
+  
+  div.registration-container > div.registration-lowercontainer{
+  
+      width: 100vw;
+  
+  }
+  
+  table.registration {
+  
+      font-family: Arial, Helvetica, sans-serif;
+  
+      border-collapse: collapse;
+  
+      width: 75vw;
+  
+  
+    }
+  
+    
+  
+    table.registration > td,  table.registration > th {
+  
+      border: 1px solid #ddd;
+  
+      padding: 8px;
+  
+    }
+  
+    
+  
+    table.registration > tr{background-color: #f2f2f2;}
+  
+    
+  
+    table.registration > tr:hover {background-color: #ddd;}
+  
+    
+  
+    table.registration > th {
+  
+      padding-top: 12px;
+  
+      padding-bottom: 12px;
+  
+      text-align: left;
+  
+      background-color: #EFF059;
+  
+      color: #032CBF;
+  
+    }
+  
+    @media screen and (max-height: 450px) {
+  
+      .registration-sidenav {padding-top: 15px;}
+  
+      .registration-sidenav a {font-size: 18px;}
+  
+    }
+  
+    .registration-gpa{
+    width: 75vw;
+    height: 5vh;
+    margin-left: 20vw;
+  
+    background-color: #E1E1DD;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+  }
+  
+  .registration-headinfo{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 25px;
+    color: #032CBF;
+    margin-left: 37%;
+  
+  }
+  
+  .registration-headicons{
+    display: inline-block;
+    margin-left: 35%;
+  }
+  
+  .registration-headicons i{
+    color: #032CBF;
+  }
+  
+  .registration-openmenu{
+    color: #E1E1DD;
+  
+  }
+  
+  .registration-rightparthead{
+    width: 20vw;
+    margin-left: 18vw;
+    transition: 0.6s;
+    font-size: 25px;
+    padding-left: 10px;
+
+  }
+  
+  .registration-headimg{
+    background-image: url("../images/umslogo.png");
+    background-size: cover;
+    background-color: #032CBF ;
+    background-position: center;
+    width: 150px;
+  }

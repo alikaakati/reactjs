@@ -1,0 +1,356 @@
+*{
+
+    margin: 0;
+  
+    padding: 0;
+  
+  }
+  
+   
+  
+  .payments-body {
+  
+    font-family: "Lato", sans-serif;
+  
+    background-color: #032CBF;
+  
+  }
+  
+  .payments-sidenav {
+  
+      height: 100%;
+  
+      width: 18vw;
+  
+      position: fixed;
+  
+      z-index: 100;
+  
+      left: 0;
+  
+      transition: 0.6s;
+  
+      top: 0;
+  
+      background-color: #E1E1DD;
+  
+      position: fixed;
+  
+      overflow-x: hidden;
+  
+      padding-top: 60px;
+  
+    }
+  
+    
+  
+    .payments-sidenav a {
+  
+      padding: 8px 8px 8px 32px;
+  
+      text-decoration: none;
+  
+      font-size: 25px;
+  
+      color: #032CBF;
+  
+      transition: 0.3s;
+  
+      display: block;
+  
+    }
+  
+    
+  
+    
+  
+    .payments-sidenav a:hover {
+  
+      opacity: 0.9;
+  
+    }
+  
+    .payments-sidemenudivs:hover{
+    background-color: #EFF059;
+  }
+  
+  
+    .payments-sidenav .payments-closebtn {
+  
+      position: absolute;
+  
+      top: 0;
+  
+      right: 25px;
+  
+      font-size: 30px;
+  
+      margin-left: 50px;
+  
+    }
+  
+   
+  
+  div.payments-container{
+  
+      width: 90vw;
+  
+      height: 100vh;
+  
+  }
+  
+  /*div.payments-container > div.payments-highercontainer{
+  
+      display: flex;
+  
+      flex-direction: column;
+  
+      justify-content: center;
+  
+      align-items: center;
+  
+  }*/
+  
+  
+  
+  
+  
+  div.payments-container > div.payments-lowercontainer >  * {
+  
+      margin-left: 20vw;
+  
+      margin-top: 1vh;
+  
+  }  
+  
+  select{
+  
+      width: 20vw;
+  
+      font-family: 'Courier New', Courier, monospace;
+  
+      font-size: 21px;
+  
+      padding: 4px;
+  
+  }
+  
+  button{
+  
+      width: 5vw;
+      height: 5.payments-4vh;
+  
+      font-family: 'Courier New', Courier, monospace;
+  
+      font-size: 21px;
+  
+      padding: 3px;
+  
+      margin-left: 5vw;
+  
+      background-color: #EFF059;
+  
+      color: #032CBF;
+  
+      opacity: 0.9;
+  
+      border: 0px;
+  
+  }
+  
+  
+  
+  button:hover{
+  
+    
+    opacity: 1;
+  
+  }
+  
+
+
+  
+  .payments-tableContainer{
+    margin-left: 20vw;
+    margin-top: 10px;
+    width: 75vw;
+  }
+  div.payments-container > div.payments-lowercontainer{
+    position: relative;
+      width: 90vw;
+      
+  }
+  
+
+
+
+  .payments-table {
+  
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: red;
+      border-collapse: collapse;
+  
+      clear: both;
+  
+    }
+  
+    
+  
+     td,  th {
+  
+      border: 1px solid #ddd;
+  
+      padding: 8px;
+  
+    }
+  
+    
+  
+     tr{background-color: #f2f2f2;}
+  
+    
+  
+     tr:hover {background-color: #ddd;}
+  
+    
+  
+     th {
+  
+      padding-top: 12px;
+  
+      padding-bottom: 12px;
+  
+      text-align: left;
+  
+      background-color: #EFF059;
+  
+      color: #032CBF;
+  
+    }
+  
+    @media screen and (max-height: 450px) {
+  
+      .payments-sidenav {padding-top: 15px;}
+  
+      .payments-sidenav a {font-size: 18px;}
+  
+    }
+  
+    .payments-gpa{
+    width: 75vw;
+    height: 5vh;
+    margin-left: 20vw;
+  
+    background-color: #E1E1DD;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+  }
+  
+  .payments-headinfo{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 25px;
+    color: #032CBF;
+    margin-left: 40%;
+  
+  }
+  
+  .payments-headicons{
+    display: inline-block;
+    margin-left: 38%;
+  }
+  
+  
+  .payments-headinfo1{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 25px;
+    color: #032CBF;
+    margin-left: 42%;
+  
+  }
+  
+  
+  
+  .payments-headicons1{
+    display: inline-block;
+    margin-left: 38%;
+  }
+  
+  
+  .payments-secselect>.payments-headinfo{
+    
+    margin-left: 39%;
+  
+  }
+  
+  .payments-selectlist{
+    margin-left: 20vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .payments-selectlist>select{
+    margin-left: 5vw;
+  }
+  
+  
+  
+  
+  .payments-selectlist>p{
+    color: #E1E1DD;
+    font-size: 18px;
+    margin-left: 5vw;
+  }
+  
+  
+  
+  
+  
+  .payments-secselect>.payments-headicons{
+    
+    margin-left: 37%;
+  }
+  
+  
+  .payments-headicons i{
+    color: #032CBF;
+  }
+  
+  .payments-openmenu{
+    color: #E1E1DD;
+  
+  }
+  
+  .payments-rightparthead{
+    width: 20vw;
+    margin-left: 18vw;
+    transition: 0.6s;
+    font-size: 25px;
+    padding-left: 10px;
+  }
+  
+  .payments-headimg{
+    background-image: url("../images/umslogo.png");
+    background-size: cover;
+    background-color: #032CBF ;
+    background-position: center;
+    width: 150px;
+  }
+  
+  .payments-schedulehead{
+    margin-top: 5vh;
+    width: 75vw;
+    height: 7vh;
+    margin-left: 20vw;
+    background-color: #EFF059;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #032CBF;
+    font-size: 20px;
+    border: 1px solid #E1E1DD;
+  }
