@@ -9,6 +9,7 @@ const Payments = () =>{
     let history = useHistory();
     const [Semesters, setSemesters] = useState([])
     const [Semester, setSemester] = useState(0);
+    const [SemesterText, setSemesterText] = useState(0);
     const [Payments, setPayments] = useState(0);
     const [TotalPaid, setTotalPaid] = useState(0);
     const [TotalUnpaid, setTotalUnpaid] = useState(0);
@@ -20,8 +21,8 @@ const Payments = () =>{
     useEffect(() => {
         checkForInfo(history);
 
-        getSemesterOptions(setSemesters , setSemester);
-        getPayments(Semester , setPayments , setTotalPaid , setTotalUnpaid , setTotalPenalties);
+        getSemesterOptions(setSemesters , setSemester , setSemesterText);
+        getPayments(Semester ,  setPayments , setTotalPaid , setTotalUnpaid , setTotalPenalties);
         console.log(Payments);
     }, [])
     return(
@@ -50,7 +51,8 @@ const Payments = () =>{
                         <div class="payments-selectlist" id="selectlist" style={{justifyContent:"center",alignItems:"center" , marginTop:15}} >
                             <p>Semester</p>
                             <select name="" id="" onChange={e =>{ 
-                                setSemester(e.target.value)
+                                setSemester(e.target.value);
+                                setSemesterText(e.target[e.target.selectedIndex].textContent)
                             }}>
                                 {Semesters.map((val , key) =>{
                                     return(
@@ -59,11 +61,12 @@ const Payments = () =>{
                                 })}
                             </select>
                             <button onClick={() =>{
-                                getPayments(Semester , setPayments);
+                                getPayments(Semester , setPayments , setTotalPaid , setTotalUnpaid , setTotalPenalties);
+                                
                             }}>List</button>
                         </div>
                         <div class="payments-gpa" style={{marginTop:10}}>
-                            <div class="payments-headinfo"><p>{Semester}</p></div>
+                            <div class="payments-headinfo"><p>{SemesterText}</p></div>
                             <div class="payments-headicons"><a href="javascript:void(0)"><i id="iconsec" class="far fa-times" ref={toggleTable} onClick={() => togglePaymentsTable(toggleTable , paymentsTable)}></i></a></div>
                         </div>
                         <div class="payments-lowercontainer">
@@ -78,6 +81,7 @@ const Payments = () =>{
                                     <td>Due Date</td>
                                     <td>Payment Date</td>
                                     <td>Penalty(L.L)</td>
+                                    <td>Paid(L.L)</td>
                                     <td>Paid At</td>
                                     <td>Type</td>
                                 </tr>
@@ -91,6 +95,7 @@ const Payments = () =>{
                                             <td>{val.DueDate}</td>
                                             <td>{val.PaymentDate}</td>
                                             <td>{val.Penalty}</td>
+                                            <td>{val.Paid}</td>
                                             <td>{val.PaidAt}</td>
                                             <td>{val.Type}</td>
                                         </tr>

@@ -37,6 +37,7 @@ export const loginUser = async(username , password , setErrorMsg , browser) =>{
             browser.push('/Home');
         }
         else{
+            setErrorMsg(resp.data.status)
         }
     }).catch(async(err) =>{
         return await err.message;
@@ -63,6 +64,7 @@ export const getRegisteredCourses = async(setCourses) =>{
     await axios.post(`${baseLink}/getRegisteredCourses.php` , {
         StudentID
     }).then(async(resp) =>{
+        console.log(resp.data);
         if(resp.data != "No data found") setCourses(resp.data);
     }).catch(async(err) =>{
         return await err.message;
@@ -107,13 +109,14 @@ export const submitPetition = async(setStatusMsg , Content) =>{
     });
 }
 
-export const getSemesterOptions = async(setOptions , setCurrentOption) =>{
+export const getSemesterOptions = async(setOptions , setCurrentOption , setSemesterText) =>{
     const StudentID = localStorage.getItem('StudentID');
     if(StudentID){
         await axios.post(`${baseLink}/getSemesterOptions.php`).then((resp) =>{ 
             if(resp.data != "No data found"){
                 setOptions(resp.data);
-                setCurrentOption(resp.data[0].SemesterName)
+                setCurrentOption(resp.data[0].SemesterName);
+                setSemesterText(resp.data[0].SemesterName)
             }
         }).catch((err) => console.log(err.message));
     }
@@ -123,6 +126,7 @@ export const getPayments = async(SemesterID , setPayments , setTotalPaid , setTo
     const StudentID = localStorage.getItem('StudentID');
     if(StudentID){
         await axios.post(`${baseLink}/getPayments.php` , {SemesterID , StudentID}).then((resp) =>{ 
+            console.log(resp.data);
             if(resp.data != "No data found"){
                 setPayments(resp.data);
                 let totalPaid = 0;
@@ -140,6 +144,12 @@ export const getPayments = async(SemesterID , setPayments , setTotalPaid , setTo
                 setTotalUnpaid((totalAmount - totalPaid) + totalPenalties);
 
             }
+            else{
+                setPayments([]);
+                setTotalPaid(0);
+                setTotalPenalties(0);
+                setTotalUnpaid(0);
+            }
         }).catch((err) => console.log(err.message));
     }
 }
@@ -150,18 +160,21 @@ export const getCurriculum = async(setCurriculum) =>{
     if(StudentID){
         await axios.post(`${baseLink}/getCurriculum.php` , {StudentID}).then((resp) =>{ 
             if(resp.data != "No data found"){
-                console.log(resp.data);
                 setCurriculum(resp.data);
             }
         }).catch((err) => console.log(err.message));
     }
 }
-export const getSchedule = async(setSchedule) =>{
+
+
+export const getSchedule = async(setSchedule , currentOption) =>{
     const StudentID = localStorage.getItem('StudentID');
     await axios.post(`${baseLink}/getSchedule.php` , {
-        StudentID
+        StudentID  , SemesterID : currentOption
     }).then(async(resp) =>{
+        console.log(resp.data);
         if(resp.data != "No data found") setSchedule(resp.data);
+        else setSchedule([]);
     }).catch(async(err) =>{
         return await err.message;
     });

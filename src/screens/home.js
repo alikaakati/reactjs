@@ -18,6 +18,7 @@ componentDidMount = () =>{
 render(){
      const today = new Date();
      var day = today.getDay();
+     var date = new Date().toLocaleDateString();
      var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
      var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
         const profilesection = () =>{

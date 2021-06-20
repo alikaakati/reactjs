@@ -1,6 +1,6 @@
 import React, { useState , useEffect , useRef } from 'react';
 import Navbar from './components/Navbar';
-import { checkForInfo, getSchedule } from './functions/apiFunctions';
+import { checkForInfo, getSchedule , getSemesterOptions } from './functions/apiFunctions';
 import "../css/payments.css"
 import { close , open , togglePaymentsTable } from './functions/designFunctions';
 import { useHistory } from 'react-router-dom';
@@ -11,14 +11,16 @@ const Schedule = () =>{
     const openButton = useRef(0);
     const toggleTable = useRef(0);
     const paymentsTable = useRef(0);
+    const [options, setOptions] = useState([]);
+    const [currentOption, setCurrentOption] = useState(0);
     const StudentName = localStorage.getItem("StudentName");
     const StudentID = localStorage.getItem("StudentID");
     let history = useHistory();
 
     useEffect(() => {
         checkForInfo(history)
-
-        getSchedule(setSchedule);
+        getSemesterOptions(setOptions , setCurrentOption);
+        getSchedule(setSchedule , currentOption);
     }, [])
     return(
         <html>
@@ -39,13 +41,26 @@ const Schedule = () =>{
                     <span class="payments-openmenu" class ="payments-openmenu" >&#9776;</span>
                 </div>
                 <div class="payments-gpa" style={{marginTop:10}}>
-                    <div class="payments-headinfo"><p>Curriculum</p></div>
+                    <div class="payments-headinfo"><p>Schedule</p></div>
                     <div class="payments-headicons"><a href="javascript:void(0)"><i id="iconsec" class="far fa-times" ref={toggleTable} onClick={() => togglePaymentsTable(toggleTable , paymentsTable)}></i></a></div>
                 </div>
                 <div class="payments-gpa" style={{display:'flex',justifyContent:"center",alignItems:"center" , marginTop:10}}>
                     <p>{StudentName} - {StudentID}</p>
                 </div>
                 <div class="payments-lowercontainer"> 
+                <div class="payments-tableContainer">
+                    <select name="" id="" onChange={e =>{ 
+                        console.log(e.target.value);
+                        setCurrentOption(e.target.value)
+                    }}>
+                        {options.map((val , key) =>{
+                            return(
+                                <option value={val.SemesterID}>{val.SemesterName}</option>
+                            );
+                        })}
+                    </select>
+                    <button onClick={() => getSchedule(setSchedule , currentOption)}>List</button>
+                </div>
                     <div class="payments-tableContainer" ref={paymentsTable}>                    
                         <table id="table">
                             <tr>

@@ -23,7 +23,7 @@ const RegisteredCourses = () =>{
                     <th>Time</th>
     
                 </tr>
-                    {courses.map((val , key) =>{
+                    {courses.length > 0 && courses.map((val , key) =>{
                         return(
                             <tr key={key}>
                                 <td>{val.CourseName}</td>
