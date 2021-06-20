@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../css/email.css"
+import { checkForInfo } from './functions/apiFunctions';
 export default class Email extends React.Component{
 constructor(props){
     super(props);
 } 
+
+componentDidMount = () =>{
+	checkForInfo(this.props.history)
+}
 
 render(){
     return(
@@ -41,7 +46,7 @@ render(){
 
 						<div class="email-phone1">
 						   <h3>Email</h3>
-						   <p class="email-p">info@ums.edu.lb</p>
+						   <p class="email-p" onClick={() => window.open('mailto:info@ums.edu.lb')}>info@ums.edu.lb</p>
 					   </div>
 
 						

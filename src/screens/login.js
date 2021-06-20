@@ -1,7 +1,13 @@
 import React from 'react';
 import "../css/login.css";
-import { Link } from "react-router-dom"; 
+import LoginForm from './components/LoginForm';
+import { autoLogin } from './functions/apiFunctions';
 export default class Login extends React.Component {
+
+	componentDidMount = () =>{
+		autoLogin(this.props.history)
+	}
+
 render(){
 	return(
 		<html>
@@ -9,7 +15,7 @@ render(){
 			<title>login</title>
 			
 		</head>
-			<body class="login-body">
+			<body class="login-body" style={{minHeight:"100vh"}}>
 
 			<div class= "login-main">
 				<div>
@@ -24,11 +30,7 @@ render(){
 						<p>Please enter your User ID and password to log in.</p>
 					</div>
 					<div>
-						<label for="username">User ID</label><br />
-						<input type="text" id="username" name="username" placeholder="User ID" /><br />
-						<label for="password">Password</label><br />
-						<input type="password" id="password" name="password" placeholder="password" /><br/><br />
-						<Link to="/Home"><button class="login-submit">Login</button></Link>
+						<LoginForm />						
 					</div> 
 				</div>
 			</div>

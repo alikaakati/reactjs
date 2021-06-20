@@ -1,10 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import "../css/home.css"
+import Navbar from './components/Navbar';
+import StudentInfoTable from './components/StudentInfoTable';
+import Profile from './components/Profile';
+import GPAtable from './components/GPAtable';
+import { checkForInfo } from './functions/apiFunctions';
+
 export default class Home extends React.Component{
 constructor(props){
     super(props);
 } 
+
+
+componentDidMount = () =>{
+    checkForInfo(this.props.history);
+}
 render(){
      const today = new Date();
      var day = today.getDay();
@@ -56,8 +66,14 @@ render(){
            this.navbar.style.width = "0px";
            this.rightparthead.style.marginLeft = "0px";
          }
-         
-        return(
+         const studentName = localStorage.getItem('StudentName');
+         const ApplicationID = localStorage.getItem('ApplicationID');
+         const BaseCampus = localStorage.getItem('BaseCampus');
+         const majorName = localStorage.getItem('majorName');
+         const Blocked = localStorage.getItem('Blocked');
+         const StudentID = localStorage.getItem('StudentID');
+         const student = {studentName , ApplicationID , BaseCampus , majorName , Blocked , StudentID};
+         return(
             <html>
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -73,91 +89,14 @@ render(){
                     <span class="home-openmenu" onClick= {() => openNav()}>&#9776;</span>
                     <div id="headimg" class="home-headimg"></div>
                     </div>
-                    
-                    <div class="home-leftprofile">
-                        <div class="home-profileimg"></div>
-                        <ul>
-                            <li>
-                                <p>Student Name<i class="far fa-chevron-down"></i></p>
-                                <ul class="home-test">
-                                    <Link to="editprofile">
-                                    <li>
-                                        <a>Profile picture<i class="fad fa-portrait"></i></a>
-                                    </li>
-                                    </Link>
-                                    <Link to="editpassword">
-                                    <li><a>Password<i class="fal fa-lock-alt"></i></a></li>
-                                    </Link>
-                                    <Link to="login">
-                                    <li> <a>Sign out<i class="fas fa-sign-out-alt"></i></a></li>
-                                    </Link>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                    <Profile student = {student}/>
                 </div>
             
                 
-            
-            
-            {/* <SideNavBar */}
             <div id="mySidenav" class="home-sidenav" ref={ref => this.navbar = ref}>
                   <a  class="home-closebtn" onClick={() => closeNav()}>&times;</a>
                   <hr />
-                  <div class="home-sidemenudivs">
-                  <Link to="Home">
-                  
-                    <a>Home</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="home-sidemenudivs">
-                  <Link to="registration">                  
-                    <a>Registration</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="home-sidemenudivs">
-                    <Link to="Payments">
-                        <a>Payments</a>
-                    </Link>
-                  </div>
-                  <hr />
-                  <div class="home-sidemenudivs">
-                  <Link to="Application">
-                  
-                    <a>Application</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="home-sidemenudivs">
-                  <Link to="Curriculum">
-                  
-                    <a>Curriculum</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="home-sidemenudivs">
-                  <Link to="schedule">
-                  
-                    <a>Schedule</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="home-sidemenudivs">
-                  <Link to="email">
-                  
-                    <a>Email</a>
-                  </Link>
-                  </div>
-            
-                <hr />
-                <div class="home-sidemenudivs">
-                <Link to="login">
-                    <a>Sign out</a>
-                </Link>
-                </div>
-                  <hr />
+                <Navbar />
             </div>
             
             <div class="home-main">
@@ -171,93 +110,17 @@ render(){
                 </div>
             
             
-                <table class="home-profiletable "id="profiletable">
-              <tr>
-                <th>Student ID</th>
-                <td>2004111</td>
-                <th>Application ID</th>
-                <td>123</td>
-                <th>Major</th>
-                <td>Computing</td>
-              </tr>
-              <tr>
-                <th>Student Name</th>
-                <td>Hadi Ali Hakim</td>
-                <th>Base Campus</th>
-                <td>Beirut</td>
-                <th>Blocked</th>
-                <td>No</td>
-              </tr>
-              
-              </table>
+              <StudentInfoTable student = {student} />
             
                 <div class="home-gpa">
                     <div class="home-headinfo"><p>GPA</p></div>
                     <div class="home-headicons"><a href="javascript:void(0)"><i id="iconsection" ref={ref => this.iconsection = ref} onClick={() => updateGPA()} class="far fa-times"></i></a></div>
             
                 </div>
-            
-            
-                <table id="home-gpatable" class="home-gpatable" ref={ref => this.gpatable = ref}>
-              <tr>
-                <th>#</th>
-                <th>Semester</th>
-                <th>GPA</th>
-                <th>Cumulative GPA</th>
-                <th>Nb of Credits</th>
-                <th>Probation</th>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Semester1</td>
-                <td>GPA1</td>
-                <td>Cumulative GPA1</td>
-                <td>Nb of Credits1</td>
-                <td>Probation1</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Semester2</td>
-                <td>GPA2</td>
-                <td>Cumulative GPA2</td>
-                <td>Nb of Credits2</td>
-                <td>Probation2</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Semester3</td>
-                <td>GPA3</td>
-                <td>Cumulative GPA3</td>
-                <td>Nb of Credits3</td>
-                <td>Probation3</td>
-              </tr>
-               <tr>
-                <td>4</td>
-                <td>Semester4</td>
-                <td>GPA4</td>
-                <td>Cumulative GPA4</td>
-                <td>Nb of Credits4</td>
-                <td>Probation4</td>
-              </tr>
-               <tr>
-                <td>5</td>
-                <td>Semester5</td>
-                <td>GPA5</td>
-                <td>Cumulative GPA5</td>
-                <td>Nb of Credits5</td>
-                <td>Probation5</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Semester6</td>
-                <td>GPA6</td>
-                <td>Cumulative GPA6</td>
-                <td>Nb of Credits6</td>
-                <td>Probation6</td>
-              </tr>
-              </table>
-            
-             </div>
+            <div ref={ref => this.gpatable = ref}>
+              <GPAtable />
+            </div>
+             </div> 
             
             
 

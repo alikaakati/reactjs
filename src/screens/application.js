@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../css/application.css"
+import Navbar from './components/Navbar';
+import Petition from './components/Petition';
+import { checkForInfo } from './functions/apiFunctions';
 export default class Application extends React.Component{
 constructor(props){
     super(props);
 } 
+componentDidMount = () =>{
+    checkForInfo(this.props.history);
+}
 render(){
 
     const openNav = () => {
@@ -33,58 +39,8 @@ render(){
             <div id="mySidenav" class="application-sidenav" ref={ref => this.navbar = ref}>
                   <a  class="application-closebtn" onClick={() => closeNav()}>&times;</a>
                   <hr />
-                  <div class="application-sidemenudivs">
-                  <Link to="Home">
-                    <a>Home</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="application-sidemenudivs">
-                  <Link to="registration">                  
-                    <a>Registration</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="application-sidemenudivs">
-                    <Link to="Payments">
-                        <a>Payments</a>
-                    </Link>
-                  </div>
-                  <hr />
-                  <div class="application-sidemenudivs">
-                  <Link to="Application">
-                  
-                    <a>Application</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="application-sidemenudivs">
-                  <Link to="Curriculum">
-                  
-                    <a>Curriculum</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="application-sidemenudivs">
-                  <Link to="schedule">
-                  
-                    <a>Schedule</a>
-                  </Link>
-                  </div>
-                  <hr />
-                  <div class="application-sidemenudivs">
-                  <Link to="email">
-                  
-                    <a>Email</a>
-                  </Link>
-                  </div>
-            
-                <hr />
-                <div class="application-sidemenudivs">
-                <Link to="login">
-                    <a>Sign out</a>
-                </Link>
-                </div>
+                  <Navbar />
+
                   <hr />
             </div>
 
@@ -100,34 +56,10 @@ render(){
 
                 <div class="application-highercontainer">
 
-                <div class="gpa">
-                    <div class="application-headinfo"><p>Submit a Petition</p></div>
-                    <div class="application-headicons"><a href="javascript:void(0)"><i id="iconsection" onclick="displaysection() & change() " class="far fa-times"></i></a></div>
-                </div>
 
 
                 <div class="application-lowercontainer" id="lowercontainer">
-
-                <div class="application-form-group">
-                    <label for="petitionkind" class="application-label">Petition</label>
-                    <select name="" id="petitionkind">
-                            <option value="pet1">petition1</option>
-
-                            <option value="pet1">pet</option>
-
-                            <option value="pet1">pet</option>
-
-                            <option value="pet1">pet</option>
-                        </select><br/><br/><br/>
-
-                    <label for="textArea" class="application-label lab">Petition Case</label>
-                    
-                        <textarea class="application-form-control" rows="5" cols="100" id="textArea"></textarea><br/><br/>
-
-                        <button class="application-button">Submit a Petition</button>
-                    
-                </div>
-                    
+                <Petition />
                     
                 </div>
 

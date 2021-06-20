@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "../css/editPassword.css"
+import { changePass, checkForInfo } from './functions/apiFunctions';
 export default class EditPassword extends React.Component{
 constructor(props){
     super(props);
 } 
+componentDidMount = () =>{
+	checkForInfo(this.props.history)
+}
 render(){
 
     const match = () =>{
-        var input1 = this.confirmpass.value;
-        var input2 = this.newpass.value;
-           if (input1==input2 & input1 != "")
-        this.passmatch.innerHTML = "Password changed successfully";
-        else
-        this.passmatch.innerHTML = "New password and confirm new password do not match";
-
+        var input1 = this.oldpass.value;
+        var input2 = this.confirmpass.value;
+        changePass(input1 , input2 , this.passmatch)
     }
     return(
         <html>
@@ -33,9 +33,9 @@ render(){
                     <br/>
                     
                     <form id="myForm" class="editpass-form" action="javascript:void(0)">
-                        <label for="newpass" class="editpass-label">New Password</label><br/>
-                        <input class="editpass-input" id="newpass" ref={ref => this.newpass = ref} type="password" name="newpass" placeholder="default" /><br/><br/>
-                        <label for="confirmpass" class="editpass-label">Confirm New Password</label><br/>
+                        <label for="newpass" class="editpass-label">Old password</label><br/>
+                        <input class="editpass-input" id="oldpass" ref={ref => this.oldpass = ref} type="password" name="oldpass" placeholder="default" /><br/><br/>
+                        <label for="confirmpass" class="editpass-label">New Password</label><br/>
                         <input class="editpass-input" id="confirmpass" ref ={ref => this.confirmpass = ref} type="password" name="confirmpass" placeholder="default" /><br/>
                         <p class="editpass-passmatch" id="passmatch" ref={ref => this.passmatch = ref}></p>
                         <br/><br/>

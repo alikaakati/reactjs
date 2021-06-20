@@ -1,14 +1,13 @@
 import logo from './logo.svg';
 import Login from './screens/login';
 import Home from './screens/home';
-import Payments from './screens/payments';
+import Payments from './screens/payments2';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Registration from './screens/registration';
 import Application from './screens/application';
-import Curriculum from './screens/curriculum';
-import Schedule from './screens/schedule';
+import Curriculum from './screens/curriculum2';
+import Schedule from './screens/schedule2';
 import Email from './screens/email';
-import EditProfile from './screens/editprofile';
 import EditPassword from './screens/editpassword';
 
 export const Routes = () => {
@@ -24,7 +23,6 @@ export const Routes = () => {
       <Route exact path="/Curriculum" component={Curriculum} />
       <Route exact path="/Schedule" component={Schedule} />
       <Route exact path="/Email" component={Email} />
-      <Route exact path="/EditProfile" component={EditProfile} />
       <Route exact path="/EditPassword" component={EditPassword} />
     </Switch>
   );
